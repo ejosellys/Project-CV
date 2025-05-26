@@ -9,7 +9,7 @@ Proyek ini bertujuan untuk mendeteksi berbagai jenis **rambu lalu lintas di Indo
 | 1 | **Pengumpulan dan Pra-Pemrosesan Dataset Rambu**<br> - Download dari Roboflow<br> - Format data disesuaikan (YOLOv5 compatible) | ✅ Selesai | 100% |
 | 2 | **Setup Environment dan Konfigurasi Dataset**<br> - Instalasi package `ultralytics` dan `roboflow`<br> - Generate dan perbaiki `data.yaml` | ✅ Selesai | 100% |
 | 3 | **Training Model YOLOv8**<br> - Menggunakan YOLOv8s<br> - Training selama 30 epoch | ✅ Selesai | 100% |
-| 4 | **Evaluasi Model dan Validasi**<br> - Validasi hasil training (precision, recall, mAP) | ✅ Selesai | 100% |
+| 4 | **Evaluasi Model dan Validasi**<br> - Validasi hasil training (precision, recall, mAP) | ⏳ Dalam Proses | 50% |
 | 5 | **Deteksi Rambu pada Test Image**<br> - Menggunakan model hasil training (`best.pt`) | ⏳ Dalam Proses | 0% |
 
 ## 🛠 Tools & Teknologi
