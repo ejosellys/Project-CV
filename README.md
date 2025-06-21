@@ -121,7 +121,7 @@ model.train(
 )
 ```
 
-### 5. Inference (Uji Coba pada Gambar)
+### 5. Visualisasi Hasil Model
 
 Setelah training selesai, kamu dapat melihat hasil visualisasi deteksi sebagai berikut:
 
