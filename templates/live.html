@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Kamera YOLOv8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #1e88e5;
+        }
+        img {
+            border-radius: 10px;
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .button {
+            margin-top: 20px;
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fa-solid fa-eye"></i> Deteksi Kamera Langsung</h1>
+    <img src="{{ url_for('video') }}" alt="Live Detection Feed">
+    <br>
+    <a href="{{ url_for('index') }}" class="button"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+</body>
+</html>

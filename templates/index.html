@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>YOLOv8 Deteksi Rambu Indonesia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1e88e5;
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1 1 30%;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature h2 {
+      font-size: 18px;
+      color: #1565c0;
+      margin: 10px 0 5px;
+    }
+
+    .feature i {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #1e88e5;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      min-height: 50px;
+    }
+
+    .feature2 {
+      flex: 1 1 30%;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature2 h2 {
+      font-size: 18px;
+      color: #1565c0;
+      margin: 10px 0 5px;
+    }
+
+    .feature2 i {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #1e88e5;
+    }
+
+    .feature2 p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: -10px;
+      min-height: 50px;
+    }
+
+    .button {
+      background-color: #1e88e5;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #1565c0;
+    }
+
+    input[type='file'] {
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 20px;
+      font-size: 13px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .feature-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-traffic-light"></i> Sistem Deteksi Rambu-Rambu Lalu Lintas Indonesia</h1>
+    <p>Deteksi otomatis rambu lalu lintas dari gambar, video, atau kamera langsung</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="feature-row">
+
+        <!-- Gambar -->
+        <div class="feature">
+          <i class="fa-solid fa-image"></i>
+          <h2>Upload Gambar</h2>
+          <p>Unggah gambar berisi rambu lalu lintas untuk dianalisis secara otomatis.</p>
+          <form method="POST" action="{{ url_for('upload_image') }}" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required />
+            <button type="submit" class="button">Deteksi Gambar</button>
+          </form>
+        </div>
+
+        <!-- Video -->
+        <div class="feature">
+          <i class="fa-solid fa-film"></i>
+          <h2>Upload Video</h2>
+          <p>Gunakan video lalu lintas untuk mendeteksi rambu-rambu secara berurutan.</p>
+          <form method="POST" action="{{ url_for('upload_video') }}" enctype="multipart/form-data">
+            <input type="file" name="video" accept="video/*" required />
+            <button type="submit" class="button">Deteksi Video</button>
+          </form>
+        </div>
+
+        <!-- Live Kamera -->
+        <div class="feature2">
+          <i class="fa-solid fa-video"></i>
+          <h2>Live Kamera</h2>
+          <p>Gunakan kamera perangkat Anda untuk mendeteksi rambu secara real-time.</p>
+          <a href="{{ url_for('live') }}">
+            <button class="button">Buka Live Cam</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

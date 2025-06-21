@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Deteksi Gambar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e88e5;
+            margin-bottom: 30px;
+        }
+
+        .result-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .image-box {
+            flex: 1 1 400px;
+            max-width: 500px;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-box h3 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #1565c0;
+        }
+
+        .button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><i class="fa-solid fa-image"></i> Hasil Deteksi Gambar</h1>
+
+    <div class="result-container">
+        <div class="image-box">
+            <h3>Gambar Asli</h3>
+            <img src="{{ url_for('static', filename='uploads/' + original) }}" alt="Gambar Asli">
+        </div>
+        <div class="image-box">
+            <h3>Gambar dengan Deteksi</h3>
+            <img src="{{ url_for('static', filename='uploads/' + predicted) }}" alt="Hasil Deteksi">
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="button"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+
+</body>
+</html>
