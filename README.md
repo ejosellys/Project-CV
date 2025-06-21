@@ -122,19 +122,9 @@ model.train(
 
 ### 5. Inference (Uji Coba pada Gambar)
 
+Setelah training selesai, kamu dapat melihat hasil visualisasi deteksi sebagai berikut:
+
 ```python
-from ultralytics import YOLO
-from IPython.display import Image, display
-import os
-
-model = YOLO('/content/runs/detect/train/weights/best.pt')
-results = model('/content/parkir.jpg', save=True)
-
-save_dir = results[0].save_dir
-predicted_image_path = os.path.join(save_dir, 'parkir.jpg')
-display(Image(filename=predicted_image_path))
+from IPython.display import Image
+Image(filename='https://github.com/ejosellys/Project-CV/blob/main/predict.png', width=800)
 ```
-
-## 🖼️ Contoh Hasil Deteksi (Segera Hadir)
-
-Hasil visualisasi akan ditampilkan setelah fase deteksi selesai dilaksanakan.
