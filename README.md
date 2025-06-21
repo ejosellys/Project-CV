@@ -18,6 +18,7 @@ Proyek ini bertujuan untuk mendeteksi berbagai jenis **rambu lalu lintas di Indo
 - 📦 Roboflow (dataset)
 - 💻 Google Colab / Python
 - 🎞️ OpenCV & Matplotlib (visualisasi)
+- 🐍 Python 3.13.5
 
 ## 📁 Struktur Dataset (YOLOv8)
 
