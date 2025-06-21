@@ -1,25 +1,25 @@
 # 🚦 Traffic Sign Detection in Indonesia with YOLOv8
 
-Proyek ini bertujuan untuk mendeteksi berbagai jenis **rambu lalu lintas di Indonesia** menggunakan YOLOv8. Dataset digunakan dari Roboflow dengan 30 kelas rambu lalu lintas yang umum ditemukan di Indonesia.
+Proyek ini bertujuan untuk mendeteksi berbagai jenis **rambu lalu lintas di Indonesia** menggunakan model **YOLOv8** dari Ultralytics. Dataset yang digunakan berasal dari Roboflow dan terdiri dari 30 kelas rambu lalu lintas yang umum ditemukan di Indonesia.
 
-## 📋 Progress Proyek
+## 📊 Progress Proyek
 
 | Fase | Deskripsi | Status | Persentase |
 |------|-----------|--------|------------|
-| 1 | **Pengumpulan dan Pra-Pemrosesan Dataset Rambu**<br> - Download dari Roboflow<br> - Format data disesuaikan (YOLOv8 compatible) | ✅ Selesai | 100% |
-| 2 | **Setup Environment dan Konfigurasi Dataset**<br> - Instalasi package `ultralytics` dan `roboflow`<br> - Generate dan perbaiki `data.yaml` | ✅ Selesai | 100% |
-| 3 | **Training Model YOLOv8**<br> - Menggunakan YOLOv8s<br> - Training selama 30 epoch | ✅ Selesai | 100% |
-| 4 | **Evaluasi Model dan Validasi**<br> - Validasi hasil training (precision, recall, mAP) | ⏳ Dalam Proses | 50% |
-| 5 | **Deteksi Rambu pada Test Image**<br> - Menggunakan model hasil training (`best.pt`) | ⏳ Dalam Proses | 0% |
+| 1 | **Pengumpulan & Pra-pemrosesan Dataset**<br>Download dataset Roboflow dan sesuaikan format ke YOLOv8 | ✅ Selesai | 100% |
+| 2 | **Setup Environment & Konfigurasi Dataset**<br>Instalasi package dan penyusunan file `data.yaml` | ✅ Selesai | 100% |
+| 3 | **Training Model YOLOv8**<br>Model YOLOv8s dilatih selama 30 epoch | ✅ Selesai | 100% |
+| 4 | **Evaluasi Model & Validasi**<br>Pengujian hasil training (precision, recall, mAP) | ✅ Selesai | 100% |
+| 5 | **Inferensi Deteksi Akhir**<br>Deteksi rambu menggunakan model `best.pt` | ✅ Selesai | 100% |
 
-## 🛠 Tools & Teknologi
+## 🛠️ Tools & Teknologi
 
-- YOLOv8 (`ultralytics`)
-- Roboflow
-- Google Colab / Python
-- OpenCV & Matplotlib (untuk visualisasi, opsional)
+- 🧠 YOLOv8 (`ultralytics`)
+- 📦 Roboflow (dataset)
+- 💻 Google Colab / Python
+- 🎞️ OpenCV & Matplotlib (visualisasi)
 
-## 📁 Struktur Dataset (YOLOv5/8 Compatible)
+## 📁 Struktur Dataset (YOLOv8)
 
 ```
 Traffic-Sign-in-Indonesia-Detection-3/
@@ -52,7 +52,7 @@ from roboflow import Roboflow
 rf = Roboflow(api_key="BDCK1eDEowfgGG4scISW")
 project = rf.workspace("putri-mawaring-wening-lwwcx").project("traffic-sign-in-indonesia-detection")
 version = project.version(3)
-dataset = version.download("yolov5")
+dataset = version.download("yolov8")
 ```
 
 ### 3. Simpan Konfigurasi Dataset
