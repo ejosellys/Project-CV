@@ -1,30 +1,45 @@
-# 🚦 Traffic Sign Detection in Indonesia with YOLOv8
+# 🚦 Traffic Sign Detection in Indonesia using YOLOv8
 
-Proyek ini bertujuan untuk mendeteksi berbagai jenis **rambu lalu lintas di Indonesia** menggunakan model **YOLOv8** dari Ultralytics. Dataset yang digunakan berasal dari Roboflow dan terdiri dari 30 kelas rambu lalu lintas yang umum ditemukan di Indonesia.
+This project focuses on detecting various types of **traffic signs commonly found in Indonesia** using the **YOLOv8 object detection model** by Ultralytics. The dataset, consisting of 30 traffic sign classes, was sourced from Roboflow.
 
-## 📊 Progress Proyek
+---
 
-| Fase | Deskripsi | Status | Persentase |
-|------|-----------|--------|------------|
-| 1 | **Pengumpulan & Pra-pemrosesan Dataset**<br>Download dataset Roboflow dan sesuaikan format ke YOLOv8 | ✅ Selesai | 100% |
-| 2 | **Setup Environment & Konfigurasi Dataset**<br>Instalasi package dan penyusunan file `data.yaml` | ✅ Selesai | 100% |
-| 3 | **Training Model YOLOv8**<br>Model YOLOv8s dilatih selama 30 epoch | ✅ Selesai | 100% |
-| 4 | **Evaluasi Model & Validasi**<br>Pengujian hasil training (precision, recall, mAP) | ✅ Selesai | 100% |
-| 5 | **Inferensi Deteksi Akhir**<br>Deteksi rambu menggunakan model `best.pt` | ✅ Selesai | 100% |
+## 🎯 Objective & Benefits
 
-## 🛠️ Tools & Teknologi
+- **Objective**: To develop an automated detection system that recognizes Indonesian traffic signs using deep learning, specifically YOLOv8.
+- **Benefits**:
+  - 🚗 Assists in intelligent driving systems and autonomous vehicles
+  - 📷 Enables traffic monitoring and road sign analysis
+  - 🧠 Provides a benchmark for computer vision research in the Indonesian context
 
-- 🧠 YOLOv8 (`ultralytics`)
-- 📦 Roboflow (dataset)
+---
+
+## 📊 Project Progress
+
+| Phase | Description | Status | Progress |
+|-------|-------------|--------|----------|
+| 1 | **Dataset Collection & Preprocessing**<br>Downloaded from Roboflow and converted to YOLOv8 format | ✅ Completed | 100% |
+| 2 | **Environment Setup & Dataset Configuration**<br>Package installation and creation of `data.yaml` | ✅ Completed | 100% |
+| 3 | **YOLOv8 Model Training**<br>Trained YOLOv8s for 30 epochs | ✅ Completed | 100% |
+| 4 | **Model Evaluation & Validation**<br>Assessed model with metrics like precision, recall, mAP | ✅ Completed | 100% |
+| 5 | **Final Inference and Prediction**<br>Prediction on test image using `best.pt` weights | ✅ Completed | 100% |
+
+---
+
+## 🛠️ Tools & Technologies
+
+- 🔍 YOLOv8 (ultralytics)
+- 📦 Roboflow (Dataset Management)
 - 💻 Google Colab / Python
-- 🎞️ OpenCV & Matplotlib (visualisasi)
+- 🎞️ OpenCV & Matplotlib (Visualization)
 - 🐍 Python 3.13.5
 
-## 📁 Struktur Dataset (YOLOv8)
+---
+
+## 📁 Dataset Structure (YOLOv8)
 
 ```
 Traffic-Sign-in-Indonesia-Detection-3/
-│
 ├── data.yaml
 ├── train/
 │   ├── images/
@@ -37,15 +52,19 @@ Traffic-Sign-in-Indonesia-Detection-3/
     └── labels/
 ```
 
-## 🚀 Cara Menjalankan
+---
 
-### 1. Instalasi Package
+## 🚀 How to Run
+
+### 1. Install Required Packages
 
 ```bash
 pip install ultralytics roboflow
 ```
 
-### 2. Download Dataset Roboflow
+---
+
+### 2. Download Dataset from Roboflow
 
 ```python
 from roboflow import Roboflow
@@ -56,7 +75,9 @@ version = project.version(3)
 dataset = version.download("yolov8")
 ```
 
-### 3. Simpan Konfigurasi Dataset
+---
+
+### 3. Save Dataset Configuration
 
 ```python
 fixed_yaml = """ 
@@ -107,7 +128,9 @@ with open("/content/Traffic-Sign-in-Indonesia-Detection-3/data.yaml", "w") as f:
     f.write(fixed_yaml)
 ```
 
-### 4. Training Model
+---
+
+### 4. Train the YOLOv8 Model
 
 ```python
 from ultralytics import YOLO
@@ -121,11 +144,21 @@ model.train(
 )
 ```
 
-### 5. Visualisasi Hasil Model
+---
 
-Setelah training selesai, kamu dapat melihat hasil visualisasi deteksi sebagai berikut:
+### 5. Visualize Detection Result
 
 ```python
 from IPython.display import Image
 Image(filename='https://github.com/ejosellys/Project-CV/blob/main/predict.png', width=800)
 ```
+
+---
+
+## 🖼️ Example Detection Output
+
+![Detection Output](https://github.com/ejosellys/Project-CV/blob/main/predict.png)
+
+---
+
+> 📌 Note: This project can be expanded to include real-time detection (webcam/video) or deployed to a web application for broader accessibility.
